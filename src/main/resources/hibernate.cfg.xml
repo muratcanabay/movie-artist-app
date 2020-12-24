@@ -16,9 +16,9 @@
         <property name="connection.autocommit">true</property>
         <property name="hbm2ddl.auto">update</property>
 
-        <mapping class="com.uniyaz.imdb.domain.Movie"/>
-        <mapping class="com.uniyaz.imdb.domain.Artist"/>
-        <mapping class="com.uniyaz.imdb.domain.MovieArtist"/>
+        <mapping class="com.uniyaz.core.domain.Movie"/>
+        <mapping class="com.uniyaz.core.domain.Artist"/>
+        <mapping class="com.uniyaz.core.domain.MovieArtist"/>
 
     </session-factory>
 </hibernate-configuration>
