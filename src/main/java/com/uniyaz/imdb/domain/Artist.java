@@ -6,7 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name="ARTIST")
+@Table(name = "ARTIST")
 public class Artist extends BaseDomain {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -24,8 +24,8 @@ public class Artist extends BaseDomain {
     @Size(max = 3)
     private Long age;
 
-    @ManyToOne(fetch = FetchType.EAGER)                         // Constraint
-    @JoinColumn(name="ID_MOVIE", referencedColumnName = "ID", foreignKey = @ForeignKey(name = "ARTIST_MOVIE_ID"))
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "ID_MOVIE", referencedColumnName = "ID", foreignKey = @ForeignKey(name = "ARTIST_MOVIE_ID"))
     private Movie movie;
 
     public Long getId() {
@@ -69,6 +69,6 @@ public class Artist extends BaseDomain {
     }
 
     public String toString() {
-        return name+" "+surname;
+        return name + " " + surname;
     }
 }

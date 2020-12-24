@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
-@Table(name="MOVIE")
+@Table(name = "MOVIE")
 public class Movie extends BaseDomain {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,7 +18,7 @@ public class Movie extends BaseDomain {
 
     @NotNull
     @Column(length = 50)
-    @Size(max=50)
+    @Size(max = 50)
     private String name;
 
     @NotNull

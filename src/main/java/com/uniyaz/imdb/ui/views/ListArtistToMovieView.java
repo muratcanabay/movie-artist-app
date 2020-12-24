@@ -1,6 +1,5 @@
 package com.uniyaz.imdb.ui.views;
 
-import com.uniyaz.imdb.dao.ArtistDao;
 import com.uniyaz.imdb.dao.MovieArtistDao;
 import com.uniyaz.imdb.domain.Artist;
 import com.uniyaz.imdb.domain.Movie;
@@ -19,7 +18,7 @@ public class ListArtistToMovieView extends VerticalLayout {
     private AddArtistToMovieView addArtistToMovieView;
     private MovieArtist movieArtist;
 
-    public ListArtistToMovieView(){
+    public ListArtistToMovieView() {
         buildTableContainer();
 
         buildTable();
@@ -33,9 +32,9 @@ public class ListArtistToMovieView extends VerticalLayout {
 
     private void buildTableContainer() {
         indexedContainer = new IndexedContainer();
-        indexedContainer.addContainerProperty("id", Long.class,null);
-        indexedContainer.addContainerProperty("id_artist", Artist.class,null);
-        indexedContainer.addContainerProperty("id_movie", Movie.class,null);
+        indexedContainer.addContainerProperty("id", Long.class, null);
+        indexedContainer.addContainerProperty("id_artist", Artist.class, null);
+        indexedContainer.addContainerProperty("id_movie", Movie.class, null);
     }
 
     private void buildTable() {
@@ -59,7 +58,7 @@ public class ListArtistToMovieView extends VerticalLayout {
 
         List<MovieArtist> movieArtistList = movieArtistDao.findAllMovieArtist();
 
-        for (MovieArtist movieArtist:movieArtistList) {
+        for (MovieArtist movieArtist : movieArtistList) {
             Item item = indexedContainer.addItem(movieArtist);
             item.getItemProperty("id").setValue(movieArtist.getId());
             item.getItemProperty("id_artist").setValue(movieArtist.getArtist());

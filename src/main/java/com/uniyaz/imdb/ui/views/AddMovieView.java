@@ -27,7 +27,7 @@ public class AddMovieView extends AddView {
     private ComboBox artistComboBox;
     private AddMenuButton addMenuButton;
 
-    public AddMovieView(){
+    public AddMovieView() {
     }
 
     @Override
@@ -56,13 +56,13 @@ public class AddMovieView extends AddView {
         List<EnumGenre> genreList = new ArrayList();
         genreList.addAll(Arrays.asList(EnumGenre.values()));
 
-        genreComboBox = new ComboBox("Choose A Genre",genreList);
+        genreComboBox = new ComboBox("Choose A Genre", genreList);
         genreComboBox.setIcon(FontAwesome.ALIGN_JUSTIFY);
         mainLayout.addComponent(genreComboBox);
 
         ArtistDao artistDao = new ArtistDao();
         List<Artist> artistList = artistDao.findAllArtist();
-        artistComboBox = new ComboBox("Choose Artist",artistList);
+        artistComboBox = new ComboBox("Choose Artist", artistList);
         artistComboBox.setIcon(FontAwesome.USER_SECRET);
         mainLayout.addComponent(artistComboBox);
 
@@ -80,10 +80,10 @@ public class AddMovieView extends AddView {
         mainLayout.addComponent(addMenuButton);
     }
 
-    public void saveView(){
+    public void saveView() {
         Long idFieldValue = null;
 
-        if (idField.getValue() != ""){
+        if (idField.getValue() != "") {
             idFieldValue = Long.parseLong(idField.getValue());
         }
 
@@ -108,7 +108,7 @@ public class AddMovieView extends AddView {
         Notification.show("Movie added successfully!");
     }
 
-    public void fillViewByMovie(Movie movie){
+    public void fillViewByMovie(Movie movie) {
         idField.setValue(movie.getId().toString());
         nameField.setValue(movie.getName());
         rateField.setValue(movie.getRate().toString());

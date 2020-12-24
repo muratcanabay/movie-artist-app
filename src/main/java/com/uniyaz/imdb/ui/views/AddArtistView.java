@@ -23,7 +23,7 @@ public class AddArtistView extends AddView {
 
     private AddMenuButton addMenuButton;
 
-    public AddArtistView(){
+    public AddArtistView() {
     }
 
     @Override
@@ -50,7 +50,7 @@ public class AddArtistView extends AddView {
 
         MovieDao movieDao = new MovieDao();
         List<Movie> movieList = movieDao.findAllMovie();
-        movieComboBox = new ComboBox("Choose Movie",movieList);
+        movieComboBox = new ComboBox("Choose Movie", movieList);
         movieComboBox.setIcon(FontAwesome.CAMERA_RETRO);
         mainLayout.addComponent(movieComboBox);
 
@@ -72,7 +72,7 @@ public class AddArtistView extends AddView {
     @Override
     public void saveView() {
         Long idFieldValue = null;
-        if (idField.getValue() != ""){
+        if (idField.getValue() != "") {
             idFieldValue = Long.parseLong(idField.getValue());
         }
 
@@ -94,7 +94,7 @@ public class AddArtistView extends AddView {
         Notification.show("Artist added successfully!");
     }
 
-    public void fillViewByArtist(Artist artist){
+    public void fillViewByArtist(Artist artist) {
         idField.setValue(artist.getId().toString());
         nameField.setValue(artist.getName());
         surnameField.setValue(artist.getSurname());

@@ -3,6 +3,7 @@ package com.uniyaz.imdb.ui.components;
 import com.vaadin.ui.HorizontalLayout;
 
 public class Container extends HorizontalLayout {
+
     private Header header;
 
     public Container(Header header) {

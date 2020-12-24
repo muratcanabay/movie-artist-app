@@ -21,7 +21,7 @@ public class AddArtistToMovieView extends AddView {
 
     private AddMenuButton addMenuButton;
 
-    public AddArtistToMovieView(){
+    public AddArtistToMovieView() {
     }
 
     @Override
@@ -36,13 +36,13 @@ public class AddArtistToMovieView extends AddView {
         ArtistDao artistDao = new ArtistDao();
         List<Artist> artistList = artistDao.findAllArtist();
 
-        artistComboBox = new ComboBox("Select Artist",artistList);
+        artistComboBox = new ComboBox("Select Artist", artistList);
         mainLayout.addComponent(artistComboBox);
 
         MovieDao movieDao = new MovieDao();
         List<Movie> movieList = movieDao.findAllMovie();
 
-        movieComboBox = new ComboBox("Select Movie",movieList);
+        movieComboBox = new ComboBox("Select Movie", movieList);
         mainLayout.addComponent(movieComboBox);
 
         addMenuButton = new AddMenuButton("Add Record");
@@ -59,7 +59,7 @@ public class AddArtistToMovieView extends AddView {
     @Override
     public void saveView() {
         Long idFieldValue = null;
-        if (idField.getValue()!=""){
+        if (idField.getValue() != "") {
             idFieldValue = Long.parseLong(idField.getValue());
         }
 
@@ -77,7 +77,8 @@ public class AddArtistToMovieView extends AddView {
         idField.setValue(movieArtist.getId().toString());
         Notification.show("Artist and Movie added succesfully.");
     }
-    public void  fillViewByArtistToMovie(MovieArtist movieArtist){
+
+    public void fillViewByArtistToMovie(MovieArtist movieArtist) {
         idField.setValue(movieArtist.getId().toString());
         artistComboBox.setValue(movieArtist.getArtist());
         movieComboBox.setValue(movieArtist.getMovie());

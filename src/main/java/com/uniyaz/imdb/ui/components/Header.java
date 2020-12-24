@@ -1,7 +1,5 @@
 package com.uniyaz.imdb.ui.components;
 
-import com.vaadin.server.FontAwesome;
-import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.themes.ValoTheme;
@@ -19,7 +17,7 @@ public class Header extends VerticalLayout {
 
         addComponent(imdbLabel);
 
-        setWidth(100,Unit.PERCENTAGE);
+        setWidth(100, Unit.PERCENTAGE);
         setHeight(175, Unit.PIXELS);
     }
 }

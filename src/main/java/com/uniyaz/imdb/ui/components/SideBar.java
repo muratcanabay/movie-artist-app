@@ -107,7 +107,7 @@ public class SideBar extends VerticalLayout {
 
     }
 
-    private void buildAddArtistMenuButton(){
+    private void buildAddArtistMenuButton() {
         String caption = "Add Artist";
         addArtistButton = new AddMenuButton(caption);
         addArtistButton.addStyleName(ValoTheme.BUTTON_DANGER);
@@ -133,7 +133,7 @@ public class SideBar extends VerticalLayout {
         });
     }
 
-    private void buildListOrderByRateMenuButton(){
+    private void buildListOrderByRateMenuButton() {
         String caption = "List Movie By Rate";
         listOrderByRateButton = new Button(caption);
         listOrderByRateButton.setIcon(FontAwesome.SORT_NUMERIC_DESC);
@@ -141,10 +141,9 @@ public class SideBar extends VerticalLayout {
         listOrderByRateButton.addClickListener(new Button.ClickListener() {
             @Override
             public void buttonClick(Button.ClickEvent clickEvent) {
-                ListMovieOrderByRateView listMovieOrderByRateView = new  ListMovieOrderByRateView();
+                ListMovieOrderByRateView listMovieOrderByRateView = new ListMovieOrderByRateView();
                 content.setContent(listMovieOrderByRateView);
             }
         });
-
     }
 }

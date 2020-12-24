@@ -9,11 +9,11 @@ public class HibernateUtil {
 
     private static SessionFactory buildSessionFactory() {
 
-        try{
+        try {
             Configuration cfg = new Configuration();
             SessionFactory sessionFactory = cfg.configure().buildSessionFactory();
             return sessionFactory;
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Session factory is not initiated!" + e);
             throw new ExceptionInInitializerError(e);
         }

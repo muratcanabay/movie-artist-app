@@ -1,4 +1,5 @@
 package com.uniyaz.imdb.domain;
+
 import com.uniyaz.imdb.common.BaseDomain;
 
 import javax.persistence.*;

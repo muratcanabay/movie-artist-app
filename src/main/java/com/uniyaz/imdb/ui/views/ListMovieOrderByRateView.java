@@ -1,8 +1,6 @@
 package com.uniyaz.imdb.ui.views;
 
-import com.uniyaz.imdb.dao.ArtistDao;
 import com.uniyaz.imdb.dao.MovieDao;
-import com.uniyaz.imdb.domain.Artist;
 import com.uniyaz.imdb.domain.Movie;
 import com.uniyaz.imdb.enums.EnumGenre;
 import com.vaadin.data.Item;
@@ -16,11 +14,11 @@ import java.util.Date;
 import java.util.List;
 
 public class ListMovieOrderByRateView extends VerticalLayout {
+    Movie movie;
     private IndexedContainer indexedContainer;
     private Table table;
-    Movie movie;
 
-    public ListMovieOrderByRateView(){
+    public ListMovieOrderByRateView() {
         buildTableContainer();
 
         buildTable();
@@ -32,11 +30,11 @@ public class ListMovieOrderByRateView extends VerticalLayout {
 
     private void buildTableContainer() {
         indexedContainer = new IndexedContainer();
-        indexedContainer.addContainerProperty("id", Long.class,null);
-        indexedContainer.addContainerProperty("name", String.class,null);
-        indexedContainer.addContainerProperty("rate", BigDecimal.class,null);
-        indexedContainer.addContainerProperty("releaseDate", Date.class,null);
-        indexedContainer.addContainerProperty("genre", EnumGenre.class,null);
+        indexedContainer.addContainerProperty("id", Long.class, null);
+        indexedContainer.addContainerProperty("name", String.class, null);
+        indexedContainer.addContainerProperty("rate", BigDecimal.class, null);
+        indexedContainer.addContainerProperty("releaseDate", Date.class, null);
+        indexedContainer.addContainerProperty("genre", EnumGenre.class, null);
     }
 
     private void buildTable() {
@@ -59,7 +57,7 @@ public class ListMovieOrderByRateView extends VerticalLayout {
 
         List<Movie> movieList = movieDao.findAllMovieOrderByRate();
 
-        for (Movie movie:movieList) {
+        for (Movie movie : movieList) {
             Item item = indexedContainer.addItem(movie);
             item.getItemProperty("id").setValue(movie.getId());
             item.getItemProperty("name").setValue(movie.getName());
